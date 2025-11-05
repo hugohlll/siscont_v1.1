@@ -1,0 +1,386 @@
+/* --- GERAL --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f7f6; /* Um cinza muito claro */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+h1 {
+    margin: 0; /* Remove a margem padrão do H1 */
+    font-size: 2em;
+    font-family: sans-serif;
+    color: #ffffff; 
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #333; 
+    font-weight: 500;
+    text-align: center;
+    margin-top: 0;
+}
+
+/* --- (ATUALIZADO) LAYOUT TOPO --- */
+#topo {
+    background-color: #34495e; 
+    width: 100%;
+    color: #ffffff;
+    padding: 15px 30px;
+    box-sizing: border-box; 
+    /* (NOVO) Usa Flexbox para alinhamento */
+    display: flex;
+    justify-content: space-between; /* Itens para a esquerda e direita */
+    align-items: center;
+}
+
+/* (NOVO) Estilo para as informações da FAB no topo */
+.header-fab-info {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espaço entre o texto e o gládio */
+    color: #ecf0f1;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.header-fab-info img {
+    height: 40px; /* Tamanho bom para o gládio no topo */
+    width: auto;
+}
+
+/* --- LAYOUT CONTEÚDO (Login) --- */
+#conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 160px); /* 100% da tela - topo - rodapé */
+}
+
+/* --- (ATUALIZADO) LAYOUT RODAPÉ --- */
+#rodape {
+    background-color: #2c3e50; 
+    width: 100%;
+    color: #ecf0f1;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    /* (NOVO) Usa Flexbox para centralizar os itens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espaço entre o logo e o texto */
+    flex-wrap: wrap; /* Para telas pequenas */
+}
+
+/* (NOVO) Logo da PAGL no rodapé */
+.footer-logo {
+    height: 45px; /* Tamanho bom para o rodapé */
+    width: auto;
+    border-radius: 4px;
+}
+
+/* (NOVO) Bloco de texto do rodapé */
+.footer-text {
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* (NOVO) Destaque para o nome da Organização */
+.footer-text strong {
+    color: #fff;
+    font-weight: 600;
+    display: block; /* Coloca o nome em sua própria linha */
+    font-size: 1.1em;
+}
+
+
+/* --- O CARD DE LOGIN (Limpo) --- */
+.login-card {
+    width: 100%;
+    max-width: 400px; 
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+    box-sizing: border-box;
+}
+
+/* --- (REMOVIDO) --- */
+/* Os estilos .login-header, .login-logo, .login-title-text não são mais necessários */
+
+
+/* --- ELEMENTOS DE FORMULÁRIO (Sem alteração) --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 12px;
+    background-color: #27a750;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.form-group button:hover {
+    background-color: #218c42;
+}
+
+/* --- FEEDBACK DE ERRO (Sem alteração) --- */
+.login-erro {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #d9534f;
+    background-color: #f2dede;
+    color: #a94442;
+    border-radius: 4px;
+    text-align: center;
+}
+
+
+
+/* --- (COLE ISTO NO FINAL DO SEU estilo.css) --- */
+
+/* --- LAYOUT PARA PÁGINAS INTERNAS (Dashboard, CRUDs, Relatórios) --- */
+#conteudo-interno {
+    padding: 30px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 160px); /* 100% da tela - topo - rodapé (ajustado) */
+}
+
+.main-content-card {
+    width: 100%;
+    max-width: 1200px; /* Um container largo para tabelas e formulários */
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+    margin: 0 auto; /* Centraliza o card na horizontal */
+}
+
+/* Título dentro do card */
+.main-content-card h2 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+/* --- ESTILOS DE NAVEGAÇÃO DO DASHBOARD --- */
+.dashboard-menu {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+    gap: 30px; /* Espaço entre as seções */
+}
+
+.dashboard-section {
+    flex: 1; /* Faz com que as seções ocupem espaço igual */
+    min-width: 250px; /* Largura mínima antes de quebrar a linha */
+}
+
+.dashboard-section h3 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    color: #27a750; /* Seu verde original */
+    font-size: 1.3em;
+    text-align: left; /* Alinha o título da seção */
+}
+
+.dashboard-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-section ul li {
+    margin-bottom: 10px;
+}
+
+.dashboard-section ul li a {
+    display: block;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    color: #34495e; /* Azul escuro */
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.dashboard-section ul li a:hover {
+    background-color: #f0f0f0;
+    border-color: #ddd;
+}
+
+/* --- ESTILOS PARA BOTÕES DE NAVEGAÇÃO (CRUD/Relatórios) --- */
+.btn-primary-crud,
+.btn-secondary-crud {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+
+.btn-primary-crud {
+    background-color: #27a750; /* Seu verde */
+    color: white;
+    border: 1px solid #27a750;
+}
+.btn-primary-crud:hover {
+    background-color: #218c42;
+}
+
+.btn-secondary-crud {
+    background-color: #f0f0f0;
+    color: #555;
+    border: 1px solid #ccc;
+}
+.btn-secondary-crud:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- ESTILOS PARA TABELAS INTERNAS (CRUD Index / Relatórios) --- */
+.main-content-card table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.main-content-card th, 
+.main-content-card td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+.main-content-card th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Links de Ação (Editar, Excluir) */
+.main-content-card td a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.main-content-card td a:hover {
+    text-decoration: underline;
+}
+.action-delete-link {
+    color: #d9534f !important; /* Vermelho para perigo */
+}
+
+/* --- ESTILOS PARA FORMULÁRIOS INTERNOS (CRUD Form) --- */
+.main-content-card form {
+    width: 100%;
+    max-width: 800px; /* Limite bom para formulários */
+    margin: 0; /* Formulários não precisam ser centrados no card */
+}
+
+/* Ajuste do .form-group (já existe, mas garantindo) */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block; margin-bottom: 8px; font-weight: bold; color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 1em;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Botões do formulário */
+.form-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex; 
+    gap: 15px; 
+}
+
+.form-actions button,
+.form-actions .btn-cancel {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+}
+.form-actions button[type="submit"] {
+    background-color: #27a750; /* Seu verde */
+    color: white;
+}
+.form-actions button[type="submit"]:hover {
+    background-color: #218c42;
+}
+.form-actions .btn-cancel {
+    background-color: #f0f0f0;
+    color: #555;
+    border: 1px solid #ccc;
+}
+.form-actions .btn-cancel:hover {
+    background-color: #e0e0e0;
+}
+
+/* Layout para formulários com colunas */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.form-row .form-group {
+    flex: 1; 
+    min-width: 200px; 
+}
